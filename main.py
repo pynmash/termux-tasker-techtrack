@@ -18,4 +18,9 @@ soup = BeautifulSoup(html, "html.parser")
 
 links = [link for link in soup.find_all("a")]
 
-print(phrase_exists(links, phrase))
+result = phrase_exists(links, phrase)
+
+if result:
+    print(f'Still says "{phrase}"')
+else:
+    print("The text changed! Applications might be open")
